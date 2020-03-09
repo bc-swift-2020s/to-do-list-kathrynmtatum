@@ -25,6 +25,7 @@ class ListTableViewCell: UITableViewCell {
             print(self.toDoItem)
             nameLabel.text = toDoItem.name
             checkBoxButton.isSelected = toDoItem.completed
+            
         }
     }
     
