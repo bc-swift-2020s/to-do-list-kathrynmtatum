@@ -25,6 +25,7 @@ class ToDoDetailTableViewController: UITableViewController {
     @IBOutlet weak var dateLabel: UILabel!
     
     var toDoItem: ToDoItem!
+    
     let datePickerIndexPath = IndexPath(row: 1, section: 1)
     let notesTextViewIndexPath = IndexPath(row: 0, section: 2)
     let notesRowHeight: CGFloat = 200
@@ -32,6 +33,7 @@ class ToDoDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // hide keyboard if we tap outside of a field
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
@@ -77,6 +79,7 @@ class ToDoDetailTableViewController: UITableViewController {
     }
     
     @IBAction func reminderSwitchChanged(_ sender: UISwitch) {
+        self.view.endEditing(true)
         dateLabel.textColor = (reminderSwitch.isOn ? .black : .gray)
         tableView.beginUpdates()
         tableView.endUpdates()
